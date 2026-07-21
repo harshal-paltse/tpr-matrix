@@ -8,8 +8,8 @@ from typing import Dict, Any
 class CredentialService:
     def __init__(self):
         # Secret key used for signing credentials (simulated KMS key)
-        self.signing_secret = b"nabard_secure_kms_signing_key_2026"
-        self.issuer_did = "did:nabard:risk-platform"
+        self.signing_secret = b"tpr_matrix_secure_kms_signing_key_2026"
+        self.issuer_did = "did:tpr-matrix:risk-platform"
 
     def issue_credential(self, enterprise_id: str, enterprise_name: str, repayment_rate: float, status: str, stability_index: float) -> Dict[str, Any]:
         """

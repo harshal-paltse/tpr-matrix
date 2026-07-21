@@ -24,7 +24,7 @@ class ForecastRequest(pydantic.BaseModel):
     rainfall_delay_weeks: float = 0.0
 
 # Initialize services
-app = FastAPI(title="NABARD AI Risk Platform Backend", version="1.0.0")
+app = FastAPI(title="TPR-MATRIX AI Risk Platform Backend", version="1.0.0")
 
 # Setup CORS
 app.add_middleware(
