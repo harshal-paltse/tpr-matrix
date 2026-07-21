@@ -111,6 +111,22 @@ npm run dev
 - **Credential Signatures**: Simulated signing keys are configured inside the credentials controller for sandbox purposes. Production deployment requires linking to a Hardware Security Module (HSM) or Key Management Service (KMS).
 - **SQLite Database**: The local SQLite database (`backend/system.db`) is ignored from version control by default.
 
+## 🔌 API Node References & Endpoints
+
+The backend services expose the following REST endpoints for credit analytics integration:
+
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/enterprises` | Retrieves all registered businesses with dynamic GNN risks |
+| `GET` | `/api/enterprises/{id}` | Retrieves detailed enterprise profile & transaction history |
+| `POST`| `/api/enterprises/{id}/forecast` | Runs causal Monte Carlo sweeps on sandbox deviations |
+| `GET` | `/api/enterprises/{id}/sensitivity` | Retrieves parameter curves (rainfall, cost, price sweeps) |
+| `GET` | `/api/network/state` | Returns the heterogeneous graph schema (nodes and edge weights) |
+| `POST`| `/api/network/intervene` | Applies dynamic loan subventions or flexible deferments |
+| `GET` | `/api/compliance/scan/{id}` | Audits PEP matches and screens structuring indicators |
+| `GET` | `/api/federated/status` | Reports DP training epochs and epsilon budget parameters |
+| `GET` | `/api/audit/verify` | Audits the cryptographic hash chain of the ledger |
+
 ---
 
 ## 📄 License
