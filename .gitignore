@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production / Builds
+/dist
+/build
+frontend/dist/
+frontend/node_modules/
+
+# Python caching & environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+
+# Databases
+backend/system.db
+*.db
+*.sqlite
+
+# IDEs & System files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+.gemini/
