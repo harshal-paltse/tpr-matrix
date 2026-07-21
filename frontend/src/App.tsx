@@ -836,7 +836,7 @@ function App() {
           
           {/* TAB 1: Portfolio View */}
           {activeTab === "portfolio" && (
-            <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+            <div className="tab-fade-in" style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
               
               {/* Premium Top KPIs Widgets */}
               <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "1rem" }}>
