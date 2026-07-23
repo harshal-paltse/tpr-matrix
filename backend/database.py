@@ -139,7 +139,7 @@ def verify_ledger_integrity() -> bool:
     rows = cursor.fetchall()
     conn.close()
     
-    expected_prev_hash = "0000000000000000000000000000000000000000000000000000000000000000"
+    expected_prev_hash = "00000000000000000000000000000000000000000000000000000000000000"
     for row in rows:
         # Check chain link
         if row["prev_hash"] != expected_prev_hash:
