@@ -112,7 +112,7 @@ def log_audit_event(event_type: str, actor: str, payload_dict: dict) -> str:
     # Get last block hash
     cursor.execute("SELECT hash FROM audit_ledger ORDER BY id DESC LIMIT 1")
     row = cursor.fetchone()
-    prev_hash = row["hash"] if row else "00000000000000000000000000000000000000000000000000000000000000"
+    prev_hash = row["hash"] if row else "000000000000000000000000000000000000000000000000000000000000"
     
     timestamp = datetime.utcnow().isoformat()
     payload_str = json.dumps(payload_dict)
