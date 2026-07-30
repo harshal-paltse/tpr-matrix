@@ -337,7 +337,6 @@ def scan_compliance(ent_id: str):
     txs = [dict(r) for r in cursor.fetchall()]
     conn.close()
     
-    # Check PEP & Sanctions
     registry_check = compliance_service.check_sanctions_and_pep(ent["name"])
     
     # Scan transactions for AML structuring & layering
