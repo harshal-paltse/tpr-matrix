@@ -185,7 +185,6 @@ def get_enterprise_details(ent_id: str, role: str = Query("lender")):
     ent_dict = dict(ent)
     ent_dict["transactions"] = [dict(tx) for tx in txs]
     
-    # Inject propagated risk status
     propagated_risks = network_service.propagate_peer_risk()
     ent_dict["peer_risk_score"] = float(round(propagated_risks.get(ent_id, ent_dict["volatility"]), 3))
     
