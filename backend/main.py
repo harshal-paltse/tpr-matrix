@@ -268,7 +268,6 @@ def get_verifiable_credential(ent_id: str):
         log_audit_event("CREDENTIAL_EXPORT", ent_id, {"status": "retrieved_existing"})
         return json.loads(row["credential_json"])
         
-    # Generate new credential
     forecaster = CausalForecastingModel(ent["category"])
     # base forecast status
     base_forecast = forecaster.simulate()
