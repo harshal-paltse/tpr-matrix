@@ -113,7 +113,7 @@ def seed_demo_data():
     conn.commit()
     conn.close()
     
-    # Log startup audit event
+   
     log_audit_event("SYSTEM_STARTUP", "system", {"status": "success", "message": "Database seeded with demonstration village clusters."})
 
 @app.on_event("startup")
