@@ -218,7 +218,6 @@ def get_causal_forecast(ent_id: str, sandbox_inputs: ForecastRequest, role: str 
         rainfall_delay_weeks=sandbox_inputs.rainfall_delay_weeks
     )
     
-    # Calculate dynamic pricing rate
     base_rate = ent["interest_rate"]
     dyn_rate = action_engine.calculate_dynamic_rate(
         base_rate=base_rate,
