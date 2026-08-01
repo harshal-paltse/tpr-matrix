@@ -49,7 +49,6 @@ def init_db():
         FOREIGN KEY(enterprise_id) REFERENCES enterprises(id)
     )
     """)
-    
     # 4. Weather Data Table
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS weather_data (
