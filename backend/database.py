@@ -143,7 +143,6 @@ def verify_ledger_integrity() -> bool:
         # Check chain link
         if row["prev_hash"] != expected_prev_hash:
             return False
-            
         # Check hash correctness
         calculated_hash = compute_hash(
             row["timestamp"], 
