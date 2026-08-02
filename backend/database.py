@@ -14,7 +14,6 @@ def get_db_connection():
 def init_db():
     conn = get_db_connection()
     cursor = conn.cursor()
-    
     # 1. Users Table
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS users (
