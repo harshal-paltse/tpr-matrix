@@ -110,7 +110,7 @@ def log_audit_event(event_type: str, actor: str, payload_dict: dict) -> str:
     # Get last block hash
     cursor.execute("SELECT hash FROM audit_ledger ORDER BY id DESC LIMIT 1")
     row = cursor.fetchone()
-    prev_hash = row["hash"] if row else "0000000000000000000000000000000000000000000000000000000"
+    prev_hash = row["hash"] if row else "0000000000000000000000000000000000000000000000000000000000"
 
     timestamp = datetime.utcnow().isoformat()
     payload_str = json.dumps(payload_dict)
@@ -137,7 +137,7 @@ def verify_ledger_integrity() -> bool:
     rows = cursor.fetchall()
     conn.close()
     
-    expected_prev_hash = "00000000000000000000000000000000000000000000000000000000000000"
+    expected_prev_hash = "0000000000000000000000000000000000000000000000000000000000000000"
     for row in rows:
         # Check chain link
         if row["prev_hash"] != expected_prev_hash:
