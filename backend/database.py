@@ -108,7 +108,7 @@ def log_audit_event(event_type: str, actor: str, payload_dict: dict) -> str:
     cursor = conn.cursor()
     
     # Get last block hash
-    cursor.execute("SELECT hash FROM audit_ledger ORDER BY id DESC LIMIT 1")
+    cursor.execute("SELECT hash FROM audit_ledger ORDER BY id desc limit 1")
     row = cursor.fetchone()
     prev_hash = row["hash"] if row else "0000000000000000000000000000000000000000000000000000000000000000000"
 
@@ -150,6 +150,7 @@ def verify_ledger_integrity() -> bool:
             row["payload"], 
             row["prev_hash"]
         )
+        
         if row["hash"] != calculated_hash:
             return False
             
